@@ -420,7 +420,7 @@
  * Multiple extruders can be assigned to the same pin in which case
  * the fan will turn on when any selected extruder is above the threshold.
  */
-#define E0_AUTO_FAN_PIN P2_04//-1
+#define E0_AUTO_FAN_PIN 7
 #define E1_AUTO_FAN_PIN -1
 #define E2_AUTO_FAN_PIN -1
 #define E3_AUTO_FAN_PIN -1
@@ -1868,7 +1868,7 @@
  * Requires NOZZLE_PARK_FEATURE.
  * This feature is required for the default FILAMENT_RUNOUT_SCRIPT.
  */
-#define ADVANCED_PAUSE_FEATURE
+//#define ADVANCED_PAUSE_FEATURE
 #if ENABLED(ADVANCED_PAUSE_FEATURE)
   #define PAUSE_PARK_RETRACT_FEEDRATE         60  // (mm/s) Initial retract feedrate.
   #define PAUSE_PARK_RETRACT_LENGTH            2  // (mm) Initial retract.
@@ -2168,14 +2168,14 @@
    * Override default SPI pins for TMC2130, TMC2160, TMC2660, TMC5130 and TMC5160 drivers here.
    * The default pins can be found in your board's pins file.
    */
-  //#define X_CS_PIN          -1
-  //#define Y_CS_PIN          -1
-  //#define Z_CS_PIN          -1
+  #define X_CS_PIN          40//-1
+  #define Y_CS_PIN          64//-1
+  #define Z_CS_PIN          42//-1
   //#define X2_CS_PIN         -1
   //#define Y2_CS_PIN         -1
   //#define Z2_CS_PIN         -1
   //#define Z3_CS_PIN         -1
-  //#define E0_CS_PIN         -1
+  #define E0_CS_PIN         44//-1
   //#define E1_CS_PIN         -1
   //#define E2_CS_PIN         -1
   //#define E3_CS_PIN         -1
@@ -2189,7 +2189,7 @@
    * The default SW SPI pins are defined the respective pins files,
    * but you can override or define them here.
    */
-  #define TMC_USE_SW_SPI
+  // #define TMC_USE_SW_SPI
   //#define TMC_SW_MOSI       -1
   //#define TMC_SW_MISO       -1
   //#define TMC_SW_SCK        -1
@@ -2236,9 +2236,9 @@
    * Use Trinamic's ultra quiet stepping mode.
    * When disabled, Marlin will use spreadCycle stepping mode.
    */
-  #define STEALTHCHOP_XY
-  #define STEALTHCHOP_Z
-  #define STEALTHCHOP_E
+   #define STEALTHCHOP_XY
+   #define STEALTHCHOP_Z
+   #define STEALTHCHOP_E
 
   /**
    * Optimize spreadCycle chopper parameters by using predefined parameter sets
@@ -2282,7 +2282,7 @@
    * STEALTHCHOP_(XY|Z|E) must be enabled to use HYBRID_THRESHOLD.
    * M913 X/Y/Z/E to live tune the setting
    */
-  #define HYBRID_THRESHOLD
+   #define HYBRID_THRESHOLD
 
   #define X_HYBRID_THRESHOLD     100  // [mm/s]
   #define X2_HYBRID_THRESHOLD    100
@@ -2332,8 +2332,8 @@
     #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
     #define Y_STALL_SENSITIVITY  8
     //#define Z_STALL_SENSITIVITY  8
-    //#define SPI_ENDSTOPS              // TMC2130 only
-    //#define IMPROVE_HOMING_RELIABILITY
+    #define SPI_ENDSTOPS              // TMC2130 only
+    #define IMPROVE_HOMING_RELIABILITY
   #endif
 
   /**
