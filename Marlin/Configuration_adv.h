@@ -420,7 +420,7 @@
  * Multiple extruders can be assigned to the same pin in which case
  * the fan will turn on when any selected extruder is above the threshold.
  */
-#define E0_AUTO_FAN_PIN 7
+#define E0_AUTO_FAN_PIN -1 //7
 #define E1_AUTO_FAN_PIN -1
 #define E2_AUTO_FAN_PIN -1
 #define E3_AUTO_FAN_PIN -1
@@ -592,7 +592,7 @@
 
 // Homing hits each endstop, retracts by these distances, then does a slower bump.
 #define X_HOME_BUMP_MM 2
-#define Y_HOME_BUMP_MM 0
+#define Y_HOME_BUMP_MM 2
 #define Z_HOME_BUMP_MM 2
 #define HOMING_BUMP_DIVISOR { 2, 2, 4 }  // Re-Bump Speed Divisor (Divides the Homing Feedrate)
 //#define QUICK_HOME                     // If homing includes X and Y, do a diagonal move initially
@@ -747,10 +747,10 @@
 // Steppers will shut down DEFAULT_STEPPER_DEACTIVE_TIME seconds after the last move when DISABLE_INACTIVE_? is true.
 // Time can be set by M18 and M84.
 #define DEFAULT_STEPPER_DEACTIVE_TIME 120
-#define DISABLE_INACTIVE_X false
-#define DISABLE_INACTIVE_Y false
-#define DISABLE_INACTIVE_Z false  // Set to false if the nozzle will fall down on your printed part when print has finished.
-#define DISABLE_INACTIVE_E false
+#define DISABLE_INACTIVE_X true
+#define DISABLE_INACTIVE_Y true
+#define DISABLE_INACTIVE_Z true  // Set to false if the nozzle will fall down on your printed part when print has finished.
+#define DISABLE_INACTIVE_E true
 
 #define DEFAULT_MINIMUMFEEDRATE       0.0     // minimum feedrate
 #define DEFAULT_MINTRAVELFEEDRATE     0.0
@@ -1119,10 +1119,10 @@
   #endif
 
   // This allows hosts to request long names for files and folders with M33
-  #define LONG_FILENAME_HOST_SUPPORT
+  //#define LONG_FILENAME_HOST_SUPPORT
 
   // Enable this option to scroll long filenames in the SD card menu
-  #define SCROLL_LONG_FILENAMES
+  //#define SCROLL_LONG_FILENAMES
 
   // Leave the heaters on after Stop Print (not recommended!)
   //#define SD_ABORT_NO_COOLDOWN
@@ -2324,7 +2324,7 @@
    * IMPROVE_HOMING_RELIABILITY tunes acceleration and jerk when
    * homing and adds a guard period for endstop triggering.
    */
-  #define SENSORLESS_HOMING // StallGuard capable drivers only
+  //#define SENSORLESS_HOMING // StallGuard capable drivers only
 
   #if EITHER(SENSORLESS_HOMING, SENSORLESS_PROBING)
     // TMC2209: 0...255. TMC2130: -64...63
