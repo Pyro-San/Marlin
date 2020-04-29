@@ -498,10 +498,11 @@
   //#define DEFAULT_Ki 2.25
   //#define DEFAULT_Kd 440
 
-  #define DEFAULT_Kp 27.25
-  #define DEFAULT_Ki 3.36
-  #define DEFAULT_Kd 55.30
-  
+  // Anet A8
+  #define DEFAULT_Kp 31.76
+  #define DEFAULT_Ki 3.59
+  #define DEFAULT_Kd 70.24
+
 #endif // PIDTEMP
 
 //===========================================================================
@@ -549,10 +550,16 @@
   //#define DEFAULT_bedKi 1.41
   //#define DEFAULT_bedKd 1675.16
 
-  #define DEFAULT_bedKp 120.40
-  #define DEFAULT_bedKi 13.84
-  #define DEFAULT_bedKd 698.27
+  // #define DEFAULT_bedKp 120.40
+  // #define DEFAULT_bedKi 13.84
+  // #define DEFAULT_bedKd 698.27
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
+
+  // Anet A8
+  #define DEFAULT_bedKp 129.41
+  #define DEFAULT_bedKi 19.75
+  #define DEFAULT_bedKd 565.43
+
 #endif // PIDTEMPBED
 
 // @section extruder
@@ -1105,8 +1112,8 @@
 #define X_MIN_POS -29//0
 #define Y_MIN_POS -32//0
 #define Z_MIN_POS 0
-#define X_MAX_POS X_BED_SIZE + X_MIN_POS
-#define Y_MAX_POS Y_BED_SIZE + Y_MIN_POS
+#define X_MAX_POS X_BED_SIZE
+#define Y_MAX_POS Y_BED_SIZE
 #define Z_MAX_POS 200
 
 /**
