@@ -482,7 +482,7 @@
 
 // Comment the following line to disable PID and enable bang-bang.
 #define PIDTEMP
-#define BANG_MAX 255     // Limits current to nozzle while in bang-bang mode; 255=full current
+#define BANG_MAX 128 //255     // Limits current to nozzle while in bang-bang mode; 255=full current
 #define PID_MAX BANG_MAX // Limits current to nozzle while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
 #define PID_K1 0.95      // Smoothing factor within any PID loop
 
@@ -492,21 +492,21 @@
   //#define PID_PARAMS_PER_HOTEND // Uses separate PID parameters for each extruder (useful for mismatched extruders)
                                   // Set/get with gcode: M301 E[extruder number, 0-2]
   // HyperCube  
-  #define DEFAULT_Kp 3.62
-  #define DEFAULT_Ki 0.18  
-  #define DEFAULT_Kd 18.12
+  #define DEFAULT_Kp 5.48
+  #define DEFAULT_Ki 0.35  
+  #define DEFAULT_Kd 21.48
 
-  #if ENABLED(PID_PARAMS_PER_HOTEND)
-    // Specify between 1 and HOTENDS values per array.
-    // If fewer than EXTRUDER values are provided, the last element will be repeated.
-    #define DEFAULT_Kp_LIST {  22.20,  22.20 }
-    #define DEFAULT_Ki_LIST {   1.08,   1.08 }
-    #define DEFAULT_Kd_LIST { 114.00, 114.00 }
-  #else
-    #define DEFAULT_Kp  22.20
-    #define DEFAULT_Ki   1.08
-    #define DEFAULT_Kd 114.00
-  #endif
+  // #if ENABLED(PID_PARAMS_PER_HOTEND)
+  //   // Specify between 1 and HOTENDS values per array.
+  //   // If fewer than EXTRUDER values are provided, the last element will be repeated.
+  //   #define DEFAULT_Kp_LIST {  22.20,  22.20 }
+  //   #define DEFAULT_Ki_LIST {   1.08,   1.08 }
+  //   #define DEFAULT_Kd_LIST { 114.00, 114.00 }
+  // #else
+  //   #define DEFAULT_Kp  22.20
+  //   #define DEFAULT_Ki   1.08
+  //   #define DEFAULT_Kd 114.00
+  // #endif
 #endif // PIDTEMP
 
 //===========================================================================
@@ -547,6 +547,7 @@
   //#define DEFAULT_bedKp 10.00
   //#define DEFAULT_bedKi .023
   //#define DEFAULT_bedKd 305.4
+
   // Hypercube 300x300 values
   #define DEFAULT_bedKp 109.90
   #define DEFAULT_bedKi 18.77
