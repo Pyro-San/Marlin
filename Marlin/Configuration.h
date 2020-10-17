@@ -549,9 +549,9 @@
   //#define DEFAULT_bedKd 305.4
 
   // Hypercube 300x300 values
-  #define DEFAULT_bedKp 109.90
-  #define DEFAULT_bedKi 18.77
-  #define DEFAULT_bedKd 429.04
+  #define DEFAULT_bedKp 141.02
+  #define DEFAULT_bedKi 27.90
+  #define DEFAULT_bedKd 475.24
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -1519,8 +1519,8 @@
 #define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
 
 #define PREHEAT_2_LABEL       "PETG"
-#define PREHEAT_2_TEMP_HOTEND 220
-#define PREHEAT_2_TEMP_BED    70
+#define PREHEAT_2_TEMP_HOTEND 240
+#define PREHEAT_2_TEMP_BED    80
 #define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
 
 /**
